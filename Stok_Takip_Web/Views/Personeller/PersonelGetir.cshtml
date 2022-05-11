@@ -1,0 +1,42 @@
+﻿@model Stok_Takip_Web.Models.Siniflar.Personeller
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("PersonelGuncelle", "Personeller", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID, new { @style = "margin-left:30px; font-weight:bold;margin-top:30px; " })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Ad, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Soyad, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.TC, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.TC, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Sifre, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Statu, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.DropDownListFor(x => x.StatuID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control", @style = "margin-left:30px;width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.MAIL, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.TELEFON, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.FOTOGRAF, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.FOTOGRAF, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+
+
+    <button class="btn btn-default" style="background-color:green;margin-left:30px; color:white;">Güncelle</button>
+    @Html.ActionLink("İptal", "Index", new { }, new { @class = "btn btn-primary", @style = "background-color:red; color:white" })
+}
+

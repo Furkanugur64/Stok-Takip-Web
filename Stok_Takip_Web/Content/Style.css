@@ -1,0 +1,27 @@
+﻿.icon{
+    margin-top:25px;
+}
+.icon i {
+    margin-left:40px;
+}
+.facebook{
+    color:blue;
+}
+.facebook:hover {
+    color: blue;
+}
+.instagram {
+    color: rgb(232, 18, 159)
+}
+.instagram:hover {
+    color: rgb(232, 18, 159)
+}
+.linkedin {
+    color: rgb(48, 107, 142)
+}
+.linkedin:hover {
+    color: rgb(48, 107, 142)
+}
+.pagination li{
+    margin-left:10px;
+}

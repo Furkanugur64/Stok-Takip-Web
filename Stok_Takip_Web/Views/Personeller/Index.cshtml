@@ -1,0 +1,45 @@
+﻿@using Stok_Takip_Web.Models.Siniflar
+@model List<Personeller>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px; margin-left:20px;width:1080px;">
+    <tr style="background-color:maroon; color:white;">
+
+        <th>ADI</th>
+        <th>SOYADI</th>
+        <th>TC</th>
+        <th>DEPARTMAN</th>
+        <th>MAİL</th>
+        <th>TELEFON</th>
+        <th>FOTOĞRAF</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.TC</td>
+            <td>@x.Statu.STATUAD</td>
+            <td>@x.MAIL</td>
+
+            <td>@x.TELEFON</td>
+            <td>
+                <img src="@x.FOTOGRAF" style="width:100px; " />
+            </td>
+            <td>@Html.ActionLink("Sil", "PersonelSil", new { id = x.ID }, new { @class = "btn btn-danger", @style = "background-color:red", onclick = "return confirm('Ürünü Gerçekten Silmek İstiyor Musunuz?')" }) </td>
+            <td>@Html.ActionLink("Güncelle", "PersonelGetir", new { id = x.ID }, new { @class = "btn btn-default", @style = "background-color:orangered; color:white;" })</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Personel Ekle", "PersonelEkle", new { }, new { @class = "btn btn-default", @style = "background-color:blue; color:white; margin-top:15px; margin-left:20px;" })
+
+
+
+

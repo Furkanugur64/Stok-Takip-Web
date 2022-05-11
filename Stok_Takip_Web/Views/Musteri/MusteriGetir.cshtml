@@ -1,0 +1,36 @@
+﻿@model Stok_Takip_Web.Models.Siniflar.Musteriler
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("MusteriGuncelle", "Musteri", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.ID, new { @style = "margin-left:30px; font-weight:bold;margin-top:30px; " })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Ad, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Soyad, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Telefon, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Mail, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Sehir, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.DropDownListFor(x => x.SehirID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control", @style = "margin-left:30px;width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Adres, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+
+    <button class="btn btn-default" style="background-color:green;margin-left:30px; color:white;">Güncelle</button>
+    @Html.ActionLink("İptal", "Index", new { }, new { @class = "btn btn-primary", @style = "background-color:red; color:white" })
+}
+
+

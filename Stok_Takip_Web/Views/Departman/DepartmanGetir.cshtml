@@ -1,0 +1,19 @@
+﻿@model Stok_Takip_Web.Models.Siniflar.Statu
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.ID, new { @style = "margin-left:30px; font-weight:bold;margin-top:30px; " })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x=>x.STATUAD, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.STATUAD, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+
+    <button class="btn btn-default" style="background-color:green;margin-left:30px; color:white;">Güncelle</button>
+    @Html.ActionLink("İptal", "Index", new { }, new { @class = "btn btn-primary", @style = "background-color:red; color:white" })
+}

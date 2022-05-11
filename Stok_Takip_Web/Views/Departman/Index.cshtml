@@ -1,0 +1,31 @@
+﻿@using Stok_Takip_Web.Models.Siniflar
+@model List<Statu>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px; margin-left:20px;width:1080px;">
+    <tr style="background-color:maroon; color:white;">
+
+        <th>DEPARTMAN ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.STATUAD</td>
+            <td>@Html.ActionLink("Sil", "DepartmanSil", new { id = x.ID }, new { @class = "btn btn-danger", @style = "Background-color:red", onclick = "return confirm('Departmanı Gerçekten Silmek İstiyor Musunuz?')" }) </td>
+            <td>@Html.ActionLink("Güncelle", "DepartmanGetir", new { id = x.ID }, new { @class = "btn btn-default", @style = "background-color:orangered; color:white;" })</td>
+
+        </tr>
+    }
+</table>
+@Html.ActionLink("Departman Ekle", "DepartmanEkle", new { }, new { @class = "btn btn-default", @style = "background-color:blue; color:white; margin-top:15px; margin-left:20px;" })
+
+
+
+
+

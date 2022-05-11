@@ -1,0 +1,43 @@
+﻿@model Stok_Takip_Web.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID, new { @style = "margin-left:30px; font-weight:bold;margin-top:30px; " })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Ad, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Kategori, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control", @style = "margin-left:30px;width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Marka, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.AlısFiyat, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.AlısFiyat, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.SatisFiyat, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Stok, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Fotograf, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Fotograf, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+    @Html.LabelFor(x => x.Ozellikler, new { @style = "margin-left:30px; font-weight:bold; " })
+    @Html.TextBoxFor(x => x.Ozellikler, new { @class = "form-control", @style = "margin-left:30px; width:1080px" })
+    <br />
+
+
+    <button class="btn btn-default" style="background-color:green;margin-left:30px; color:white;">Güncelle</button>
+    @Html.ActionLink("İptal", "Index", new { }, new { @class = "btn btn-primary", @style = "background-color:red; color:white" })
+}
+
+
+

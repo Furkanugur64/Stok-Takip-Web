@@ -1,0 +1,55 @@
+﻿@model Stok_Takip_Web.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="text-align:center; color:red; margin-top:20px;"> Müşteri Ekleme Sayfası</h1>
+@using (Html.BeginForm("UrunEkle", "Urun", FormMethod.Post, new { @style = "margin-top:30px;" }))
+{
+    <div>
+        @Html.LabelFor(x => x.Ad, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.Ad, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.KategoriID, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control", @style = "margin-left:30px;width:1000px" })
+        @Html.ValidationMessageFor(x => x.KategoriID, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Marka, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.Marka, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.AlısFiyat, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.AlısFiyat, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.AlısFiyat, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.SatisFiyat, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.SatisFiyat, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Stok, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.Stok, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Fotograf, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.Fotograf, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.Fotograf, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Ozellikler, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.Ozellikler, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.Ozellikler, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <button class="btn btn-default" style="background-color:blue; color:white;margin-left:30px;">Kaydet</button>
+    @Html.ActionLink("İptal", "Index", new { }, new { @class = "btn btn-primary", @style = "background-color:red; color:white" })
+}
+
+
+

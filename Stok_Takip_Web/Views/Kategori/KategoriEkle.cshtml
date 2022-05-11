@@ -1,0 +1,20 @@
+﻿@model Stok_Takip_Web.Models.Siniflar.Kategoriler
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="text-align:center; color:red; margin-top:20px;"> Kategori Ekleme Sayfası</h1>
+@using (Html.BeginForm("KategoriEkle", "Kategori", FormMethod.Post, new { @style = "margin-top:30px;" }))
+{
+    <div>
+        @Html.LabelFor(x => x.Ad, new { @style = "margin-left:30px; font-weight:bold; " })
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @style = "margin-left:30px; width:1000px" })
+        @Html.ValidationMessageFor(x => x.Ad, "", new { @style = "color:red; margin-left:30px;" })
+    </div>
+    <button class="btn btn-default" style="background-color:blue; color:white;margin-left:30px;">Kaydet</button>
+    @Html.ActionLink("İptal", "Index", new { }, new { @class = "btn btn-primary", @style = "background-color:red; color:white" })
+}
+
+
+
